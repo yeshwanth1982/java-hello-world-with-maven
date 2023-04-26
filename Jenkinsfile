@@ -14,7 +14,13 @@ pipeline{
         }
         stage('build'){
             steps{
-               bat 'mvn package'
+                sh '#!/bin/bash'
+                sh '''
+                    export MAVEN_HOME=/usr/local/Cellar/maven/3.9.1
+                    export PATH=$PATH:$MAVEN_HOME/bin
+                    mvn --version
+                    mvn clean package
+                '''
             }
         }
     }
