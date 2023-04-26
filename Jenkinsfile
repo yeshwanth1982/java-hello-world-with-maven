@@ -1,10 +1,10 @@
 pipeline{
     agent any
 
-    tools {
+    /*tools {
          maven 'maven'
          jdk 'java'
-    }
+    }*/
 
     stages{
         stage('checkout'){
